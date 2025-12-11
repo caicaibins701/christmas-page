@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>圣诞快乐 🎄 Merry Christmas</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 雪花容器 -->
+    <div class="snowflakes" aria-hidden="true"></div>
+
+    <!-- 主容器 -->
+    <div class="container">
+        <!-- 标题 -->
+        <header class="header">
+            <h1 class="title">🎅 圣诞快乐！</h1>
+            <h2 class="subtitle">Merry Christmas!</h2>
+        </header>
+
+        <!-- 倒计时 -->
+        <div class="countdown-container">
+            <div class="countdown-title">⏰ 距离圣诞节还有</div>
+            <div class="countdown">
+                <div class="countdown-item">
+                    <span class="countdown-value" id="days">0</span>
+                    <span class="countdown-label">天</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-value" id="hours">0</span>
+                    <span class="countdown-label">小时</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-value" id="minutes">0</span>
+                    <span class="countdown-label">分钟</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-value" id="seconds">0</span>
+                    <span class="countdown-label">秒</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 圣诞树 -->
+        <div class="christmas-tree">
+            <div class="star">⭐</div>
+            <div class="tree-section">
+                <div class="tree-layer layer-1">
+                    <span class="light light-1">●</span>
+                    <span class="light light-2">●</span>
+                </div>
+            </div>
+            <div class="tree-section">
+                <div class="tree-layer layer-2">
+                    <span class="light light-3">●</span>
+                    <span class="light light-4">●</span>
+                    <span class="light light-5">●</span>
+                </div>
+            </div>
+            <div class="tree-section">
+                <div class="tree-layer layer-3">
+                    <span class="light light-6">●</span>
+                    <span class="light light-7">●</span>
+                    <span class="light light-8">●</span>
+                    <span class="light light-9">●</span>
+                </div>
+            </div>
+            <div class="tree-section">
+                <div class="tree-layer layer-4">
+                    <span class="light light-10">●</span>
+                    <span class="light light-11">●</span>
+                    <span class="light light-12">●</span>
+                    <span class="light light-13">●</span>
+                    <span class="light light-14">●</span>
+                </div>
+            </div>
+            <div class="trunk"></div>
+            <div class="gifts">
+                <span class="gift">🎁</span>
+                <span class="gift">🎁</span>
+            </div>
+        </div>
+
+        <!-- 祝福语 -->
+        <div class="blessing">
+            <p class="blessing-text">愿你的圣诞充满温馨与欢乐</p>
+            <p class="blessing-text-en">May your Christmas be filled with joy and warmth</p>
+            <p class="blessing-text">祝你新年快乐，万事如意！</p>
+        </div>
+
+        <!-- 音乐控制 -->
+        <div class="music-control">
+            <button id="musicToggle" class="music-btn" title="播放/暂停音乐">
+                🔊 <span id="musicStatus">点击播放音乐</span>
+            </button>
+            <div class="volume-control">
+                <span class="volume-icon">🔉</span>
+                <input type="range" id="volumeSlider" min="0" max="100" value="50" class="volume-slider">
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
