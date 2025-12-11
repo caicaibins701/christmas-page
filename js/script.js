@@ -38,33 +38,45 @@ function updateCountdown() {
     document.getElementById('seconds').textContent = seconds;
 }
 
-// 生成雪花
+// 生成雪花 - 全屏无规律飞舞
 function createSnowflakes() {
     const snowflakesContainer = document.querySelector('.snowflakes');
-    const snowflakeCount = 30; // 雪花数量
+    const snowflakeCount = 50; // 增加雪花数量
     
     for (let i = 0; i < snowflakeCount; i++) {
         const snowflake = document.createElement('div');
         snowflake.classList.add('snowflake');
-        snowflake.textContent = '❄';
         
-        // 随机位置
+        // 使用不同的雪花字符
+        const snowflakeChars = ['❄', '❅', '❆', '✻', '✼', '❉'];
+        snowflake.textContent = snowflakeChars[Math.floor(Math.random() * snowflakeChars.length)];
+        
+        // 完全随机的起始位置（包括X和Y）
         snowflake.style.left = Math.random() * 100 + '%';
+        snowflake.style.top = -(Math.random() * 20) + '%'; // 从屏幕上方不同高度开始
         
-        // 随机大小
-        const size = Math.random() * 0.5 + 0.5; // 0.5 到 1
+        // 更大范围的随机大小
+        const size = Math.random() * 1.2 + 0.4; // 0.4 到 1.6
         snowflake.style.fontSize = size + 'rem';
         
-        // 随机动画持续时间（飘落速度）
-        const duration = Math.random() * 3 + 5; // 5到8秒
+        // 更多样化的飘落速度
+        const duration = Math.random() * 8 + 8; // 8到16秒
         snowflake.style.animationDuration = duration + 's';
         
         // 随机延迟
-        const delay = Math.random() * 5;
+        const delay = Math.random() * 8;
         snowflake.style.animationDelay = delay + 's';
         
         // 随机透明度
-        snowflake.style.opacity = Math.random() * 0.5 + 0.5; // 0.5 到 1
+        snowflake.style.opacity = Math.random() * 0.6 + 0.3; // 0.3 到 0.9
+        
+        // 随机水平漂移距离
+        const drift = (Math.random() - 0.5) * 100; // -50 到 50
+        snowflake.style.setProperty('--drift', drift + 'px');
+        
+        // 随机旋转速度
+        const rotateSpeed = Math.random() * 2 + 1; // 1到3
+        snowflake.style.setProperty('--rotate-speed', rotateSpeed);
         
         snowflakesContainer.appendChild(snowflake);
     }
